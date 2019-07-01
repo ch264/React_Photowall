@@ -7,7 +7,7 @@ class PhotoWall extends Component {
         // map through posts and for each instance we generate photo instance from each post
         // pass className as an attribute to add css styles
         return <div className="photoGrid">
-            {this.props.posts.map((post, index) => <Photo key={index} post={post} />)} 
+            {this.props.posts.map((post, index) => <Photo key={index} post={post} />)}
         </div>
     }
 }

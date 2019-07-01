@@ -3,12 +3,17 @@
 /* ///////////////////////////////////////////////////////// */
 html {
     font-size: 10px;
-    
+    font-family: sans-serif;
 }
 
 @font-face {
     font-family: 'billabong';
     src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
 }
 
 /* ///////////////////////////////////////////////////////// */
@@ -124,4 +129,35 @@ h1 a:focus {
     border-bottom: 1px solid #d3d3d3;
     outline: none;
     resize: vertical;
+   }
+
+/* ///////////////////////////////////////////////////////// */
+/* //////////////////  Button    ///////////////////////////*/
+/* //////////////////////////////////////////////////////// */
+
+.button-container {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+
+button, .button, .remove-button {
+    border: 2px solid #f2f2f2;
+    background: none;
+    flex-basis: 48%;
+    display: inline-block;
+    line-height: 2;
+    text-decoration: none;
+    padding: 5px;
+    text-align: center;
+    font-size: 15px;
+    color: red;
+    transition: all 0.2s;
+    box-sizing: padding-box;
+   }
+
+button:hover,.button:hover, button:focus, .button:focus {
+    border-color: #00f;
+    outline: 0;
    }

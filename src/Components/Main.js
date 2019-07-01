@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Title from './Title';
 import Photowall from './PhotoWall';
 
+// pass in this dummy data into the Photowall instance
 const posts = [{
     id: "0",
     description: "beautiful landscape",
