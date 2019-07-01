@@ -1,7 +1,19 @@
+/* ///////////////////////////////////////////////////////// */
+/* ////////////////   Layout      ///////////////////////////*/
+/* ///////////////////////////////////////////////////////// */
 html {
     font-size: 10px;
     
 }
+
+@font-face {
+    font-family: 'billabong';
+    src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
+}
+
+/* ///////////////////////////////////////////////////////// */
+/* ////////////////   Title       ///////////////////////////*/
+/* ///////////////////////////////////////////////////////// */
 
 h1 {
     font-family: billabong, 'billabongregular';
@@ -13,15 +25,103 @@ h1 {
     color: black;
     text-decoration: none;
 }
+
 h1 a {
     color: black;
     text-decoration: none;
+    
 }
+
 h1 a:focus {
     outline: 0;
 }
 
-@font-face {
-    font-family: 'billabong';
-    src: url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.eot?#iefix") format('embedded-opentype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.woff") format('woff'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.ttf") format('truetype'), url("https://cdn.rawgit.com/milktronics/beaglegr.am/master/public/fonts/billabong-webfont.svg#billabongregular") format('svg');
-}
+
+
+/* ///////////////////////////////////////////////////////// */
+/* ////////////////   Photo        ///////////////////////////*/
+/* ///////////////////////////////////////////////////////// */
+
+.photoGrid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+   }
+
+.figure {
+    flex-basis: calc(33.333% - 4rem);
+    border: 1px solid #d3d3d3;
+    padding: 2rem;
+    flex-grow: 1;
+    margin: 0 2rem 2rem 2rem;
+   }
+
+.figure .single-photo {
+    flex-basis: calc(33.333% - 4rem);
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 0 2rem 2rem 2rem;
+    padding: 2rem;
+    border: 1px solid #d3d3d3;
+    background: #fff;
+    position: relative;
+   }
+   
+.single-photo {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    background: #fff;
+    border: black;
+   }
+   
+.single-photo .figure {
+    box-shadow: none;
+    margin: 0 2rem 0 0;
+    border: 0;
+    padding: 0;
+    flex: 1 0 60%;
+    max-width: 60%;
+   }
+   
+.single-photo .comments {
+    flex: 1 0 40%;
+    max-width: 40%;
+   }
+   
+.single-photo .photo {
+    width: 100%;
+    margin: 0;
+   }
+   
+.photo {
+    width: calc(100% + 4rem);
+    margin-left: -2rem;
+    margin-top: -2rem;
+    max-width: none;
+   }
+
+/* ///////////////////////////////////////////////////////// */
+/* ////////////////   Comment     ///////////////////////////*/
+/* ///////////////////////////////////////////////////////// */
+
+.comment {
+    width: 100%
+   }
+   
+.comment p {
+    border-bottom: 1px solid #d3d3d3;
+    padding: 0.5rem 0;
+   }
+   
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    border: 0;
+    font-size: 1.3rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #d3d3d3;
+    outline: none;
+    resize: vertical;
+   }
