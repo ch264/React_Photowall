@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Title from './Title';
+import Photowall from './PhotoWall';
 
 const posts = [{
     id: "0",
@@ -21,6 +22,7 @@ class Main extends Component {
     render() {
         return <div> 
                 <Title title={'Photowall'}/>
+                <Photowall posts={posts}/> 
             </div>
     }
 }
