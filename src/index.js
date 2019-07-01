@@ -3,6 +3,8 @@ import ReactDom from 'react-dom';
 
 import Main from './Components/Main'
 
+import './styles/stylesheet.css'
+
 
 
 
