@@ -1,12 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import ReactDom from 'react-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// when using an array, every element should be represented by a unique key
+const tasks = ['Take out the trash', 'Buy Milk','Clean house'];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// react elements decide what is rendered
+const element = React.createElement('ol', null, tasks
+.map((task, index) => React.createElement('li', { key: index}, task))); // tag, props (unique identifier), content
+
+
+
+
+// react Dom does the rendering
+ReactDom.render(element, document.getElementById('root'));
