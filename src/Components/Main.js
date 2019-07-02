@@ -28,11 +28,11 @@ class Main extends Component {
         }  
     }
 
-// update state to rerender component to update UI
+    // update state to rerender component to update UI
     render() {
         return <div> 
                 <Title title={'Photowall'}/>
-                <Photowall posts={this.state.posts}/> 
+                <Photowall posts={this.state.posts}/>
             </div>
     }
 }
