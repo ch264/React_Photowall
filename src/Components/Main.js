@@ -26,13 +26,25 @@ class Main extends Component {
                 imageLink: "https://fm.cnbc.com/applications/cnbc.com/resources/img/editorial/2017/08/24/104670887-VacationExplainsTHUMBWEB.1910x1000.jpg"
             }]
         }  
+        this.removePhoto = this.removePhoto.bind(this) // this is bound to our method and the conext is correct and this does not point to a function
     }
 
-    // update state to rerender component to update UI
+    // method removes photo, pass into photo component, change state und update UI
+   
+    //////////////// Question: how does postRemoved know which photo is clicked? how does is this information passed back up to main? //////////////////////////////////////
+    removePhoto(postRemoved) { // access method in each photo component
+        console.log('postRemoved', postRemoved)
+
+        this.setState((state) => ({
+            posts: state.posts.filter(post => post !== postRemoved) // filter loops through array and update state with new posts array that does not include the photo that we just removed
+        }))
+    }
+
+    // update state to rerender component to update UI. pass in onRemovePhoto as prop
     render() {
         return <div> 
                 <Title title={'Photowall'}/>
-                <Photowall posts={this.state.posts}/>
+                <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto}/>
             </div>
     }
 }
