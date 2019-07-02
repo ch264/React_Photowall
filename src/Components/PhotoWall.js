@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Photo from './Photo';
 
 // stateless functional component accesses the props through argument and not the component instance itself. Therefore we can remove the this keyword
