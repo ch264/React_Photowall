@@ -76,9 +76,10 @@ class Main extends Component {
                     <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/>
                 </div>
             )}/>
-            <Route path= "/AddPhoto" render ={(history) => (
+            <Route path= "/AddPhoto" render ={({history}) => (
                 <AddPhoto onAddPhoto = {(addedPost) => {
                     this.addPhoto(addedPost) // updates state
+                    history.push('/')
                 }}/>
             )}/> 
         </div>
