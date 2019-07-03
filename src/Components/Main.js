@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Title from './Title';
 import Photowall from './PhotoWall';
 import AddPhoto from './AddPhoto';
-
+import { Route } from 'react-router-dom';
 
 // pass in this dummy data into the Photowall instance
 
@@ -31,7 +31,6 @@ class Main extends Component {
         }  
         this.removePhoto = this.removePhoto.bind(this); // this is bound to our method and the conext is correct and this does not point to a function
         // console.log('constructor')
-        this.navigate = this.navigate.bind(this);
     }
 
     // method removes photo, pass into photo component, change state und update UI
@@ -41,13 +40,6 @@ class Main extends Component {
         this.setState((state) => ({
             posts: state.posts.filter(post => post !== postRemoved) // filter loops through array and update state with new posts array that does not include the photo that we just removed
         }))
-    }
-
-    // updates state of screen property
-    navigate() {
-        this.setState({
-            screen: 'addPhoto'
-        })
     }
 
     // use to update state with data from database/API and call render method after 
@@ -66,24 +58,18 @@ class Main extends Component {
     // update state to rerender component to update UI. pass in onRemovePhoto as prop
     render() {
         console.log('render')
-        return <div> 
-            {
-                this.state.screen === 'photos' && (
-                    <div> 
-                        <Title title={'Photowall'}/>
-                        <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/>
-                    </div>
-                )
-            }
-            {
-                this.state.screen === 'addPhoto' && (
-                    <div>
-                        <AddPhoto />
-                    </div>
-          
-                )
-            }
-              </div>
+        // two options for singel and multiple components rendering
+        return (
+        <div> 
+            <Route exact path = "/" render={() => (
+                <div>
+                    <Title title={'Photowall'}/>
+                    <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/>
+                </div>
+            )}/>
+            <Route path= "/AddPhoto" component = { AddPhoto } /> 
+        </div>
+        )
     }
 }
 
