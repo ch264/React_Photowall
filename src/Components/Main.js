@@ -4,6 +4,9 @@ import Photowall from './PhotoWall';
 import AddPhoto from './AddPhoto';
 import { Route } from 'react-router-dom';
 
+import { createBrowserHistory } from 'history'
+// import { history } from 'history'
+
 // pass in this dummy data into the Photowall instance
 
 
@@ -42,6 +45,13 @@ class Main extends Component {
         }))
     }
 
+    // method add post to array, pass down as props in render method
+    addPhoto(postSubmitted) {
+        this.setState((state) => ({
+            posts: state.posts.concat([postSubmitted])
+        }))
+    }
+
     // use to update state with data from database/API and call render method after 
     componentDidMount() {
         console.log('componentDidMount')
@@ -51,8 +61,7 @@ class Main extends Component {
         console.log('componentDidUpdate')
         console.log('post prev props', prevProps.posts)
         console.log('post prev state', prevState.posts)
-        console.log('post current state', this.state)
-        
+        console.log('post current state', this.state) 
     }
 
     // update state to rerender component to update UI. pass in onRemovePhoto as prop
@@ -67,7 +76,11 @@ class Main extends Component {
                     <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/>
                 </div>
             )}/>
-            <Route path= "/AddPhoto" component = { AddPhoto } /> 
+            <Route path= "/AddPhoto" render ={(history) => (
+                <AddPhoto onAddPhoto = {(addedPost) => {
+                    this.addPhoto(addedPost) // updates state
+                }}/>
+            )}/> 
         </div>
         )
     }
