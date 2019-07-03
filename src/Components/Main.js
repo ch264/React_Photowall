@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import Title from './Title';
 import Photowall from './PhotoWall';
-import AddPhoto from './AddPhoto'
+import AddPhoto from './AddPhoto';
+
 
 // pass in this dummy data into the Photowall instance
 
