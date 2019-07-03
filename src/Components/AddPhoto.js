@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 
 
 
-
 class AddPhoto extends Component {
 
     // bind constructor to itself so context is correct and this in handleSubmit is always pointing to component instance
@@ -18,7 +17,7 @@ class AddPhoto extends Component {
         const description = e.target.elements.description.value;
         
         const post = {
-            id: 0,
+            id: Number(new Date()),
             description: description,
             imageLink: imageLink
         }
