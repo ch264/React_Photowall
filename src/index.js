@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+
+// import { createBrowserHistory } from 'history'
 
 import Main from './Components/Main'
 
