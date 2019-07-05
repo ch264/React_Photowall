@@ -5,6 +5,7 @@ import AddPhoto from './AddPhoto';
 import { Route } from 'react-router-dom';
 
 import { createBrowserHistory } from 'history'
+import Photo from './Photo';
 // import { history } from 'history'
 
 // pass in this dummy data into the Photowall instance
@@ -68,6 +69,7 @@ class Main extends Component {
     // update state to rerender component to update UI. pass in onRemovePhoto as prop
     render() {
         // console.log(this.state.posts)
+        // console.log(this.props.posts)
         // two options for singel and multiple components rendering
         return (
         <div> 
@@ -75,6 +77,7 @@ class Main extends Component {
                 <div>
                     <Title title={'Photowall'}/>
                     {/* <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/> */}
+                    <Photowall posts={this.props.posts} />
                 </div>
             )}/>
             {/* <Route path= "/AddPhoto" render ={({history}) => (

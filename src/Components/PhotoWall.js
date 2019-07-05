@@ -21,8 +21,9 @@ function PhotoWall(props) {
     )
 }
 
+// we will dispatch an action to reducer that updates the state, no more methods
 PhotoWall.propTypes = {
-    posts: PropTypes.array.isRequired, // if no components are passed in, error
+    // posts: PropTypes.array.isRequired, // if no components are passed in, error
     onRemovePhoto: PropTypes.func.isRequired // needed for functionality
 }
 
