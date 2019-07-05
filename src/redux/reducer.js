@@ -1,7 +1,11 @@
-// function
+import posts from '../data/posts'
+
+
+// functions
 
 // Current state always has to be returned by reducer, action that is dispatched
-const postReducer = function posts(state, action) {
+// set state equal to initial value and posts populate state in store
+const postReducer = function posts(state = posts, action) {
     // remove photo  action
     return state;
 }
