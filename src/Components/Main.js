@@ -67,7 +67,7 @@ class Main extends Component {
 
     // update state to rerender component to update UI. pass in onRemovePhoto as prop
     render() {
-        console.log(this.state.posts)
+        // console.log(this.state.posts)
         // two options for singel and multiple components rendering
         return (
         <div> 
