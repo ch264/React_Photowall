@@ -6,7 +6,8 @@ import { Route } from 'react-router-dom';
 
 import { createBrowserHistory } from 'history'
 import Photo from './Photo';
-// import { history } from 'history'
+
+import { removePost } from '../redux/actions'
 
 // pass in this dummy data into the Photowall instance
 
@@ -57,6 +58,7 @@ class Main extends Component {
     // use to update state with data from database/API and call render method after 
     componentDidMount() {
         console.log('componentDidMount')
+        this.props.removePost(1); // pass in payload of 1 (index)
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -70,6 +72,8 @@ class Main extends Component {
     render() {
         // console.log(this.state.posts)
         // console.log(this.props.posts)
+        console.log(this.props.dispatch)
+
         // two options for singel and multiple components rendering
         return (
         <div> 
@@ -77,7 +81,8 @@ class Main extends Component {
                 <div>
                     <Title title={'Photowall'}/>
                     {/* <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/> */}
-                    <Photowall posts={this.props.posts} />
+                    {/* {...this.props} passes all props (posts and dispatches) from main into photowall */}
+                    <Photowall {...this.props} />
                 </div>
             )}/>
             {/* <Route path= "/AddPhoto" render ={({history}) => (

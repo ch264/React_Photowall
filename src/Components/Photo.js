@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { connect } from 'react-redux';
-
 function Photo(props) {
     const post = props.post
     // add curly braces to add javascript dot notation
@@ -12,21 +10,17 @@ function Photo(props) {
         <div className="button-container">
             {/* call the method onRemovePhoto that was passed down as a prop */}
             <button className="remove-button" onClick = {() => {
-                props.onRemovePhoto(post) // pass in post, which is postRemoved argument
+                // props.onRemovePhoto(post) // pass in post, which is postRemoved argument
+                props.removePost(1);
             }} >Remove</button>
         </div>
     </figure>
 }
 
-function mapStateToProps(state) {
-    return {
-        posts: state
-    }
-}
 
 Photo.propTypes = {
     post: PropTypes.object.isRequired
     // onRemovePhoto: PropTypes.func.isRequired // function that comes along with props
 }
 
-export default connect(mapStateToProps)(Photo)
+export default Photo

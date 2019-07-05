@@ -7,6 +7,7 @@ import posts from '../data/posts'
 // set state equal to initial value and posts populate state in store
 const postReducer = function posts(state = posts, action) {
     // remove photo  action
+    console.log(action.index)
     return state;
 }
 
