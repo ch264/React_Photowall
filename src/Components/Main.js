@@ -11,7 +11,8 @@ import { createBrowserHistory } from 'history'
 
 
 class Main extends Component {
-    // only used to initalise state of component or bind methods to the proper context
+    // only used to initalise state of components or bind methods to the proper context
+    // state represents immutable data and affects what is rendered on the page. state is managed internally by the component itself
     constructor() { 
         super() // call to use keyword 'this'
         this.state = { // points to 'main' instance that we declared
