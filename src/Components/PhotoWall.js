@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 // stateless functional component accesses the props through argument and not the component instance itself. Therefore we can remove the this keyword
 
 function PhotoWall(props) {
-    // all elements needs to be wrapped in divs
+    // all elements need to be wrapped in divs
     return (
         <div>
             <Link className='addIcon' to="/AddPhoto"> </Link>
@@ -21,10 +21,10 @@ function PhotoWall(props) {
     )
 }
 
-// we will dispatch an action to reducer that updates the state, no more methods
+// we will dispatch an action that will go to reducer that updates the state, no more methods to update the state
 PhotoWall.propTypes = {
-    // posts: PropTypes.array.isRequired, // if no components are passed in, error
-    onRemovePhoto: PropTypes.func.isRequired // needed for functionality
+    posts: PropTypes.array.isRequired // if no components are passed in, error
+    // onRemovePhoto: PropTypes.func.isRequired // needed for functionality
 }
 
 export default PhotoWall

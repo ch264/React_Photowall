@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+
 function Photo(props) {
     const post = props.post
     // add curly braces to add javascript dot notation
@@ -16,9 +18,15 @@ function Photo(props) {
     </figure>
 }
 
+function mapStateToProps(state) {
+    return {
+        posts: state
+    }
+}
+
 Photo.propTypes = {
-    post: PropTypes.object.isRequired,
+    post: PropTypes.object.isRequired
     // onRemovePhoto: PropTypes.func.isRequired // function that comes along with props
 }
 
-export default Photo
+export default connect(mapStateToProps)(Photo)
