@@ -58,14 +58,14 @@ class Main extends Component {
     // use to update state with data from database/API and call render method after 
     componentDidMount() {
         console.log('componentDidMount')
-        this.props.removePost(1); // pass in payload of 1 (index)
+        // this.props.removePost(1); // pass in payload of 1 (index)
     }
 
     componentDidUpdate(prevProps, prevState) {
         console.log('componentDidUpdate')
-        console.log('post prev props', prevProps.posts)
-        console.log('post prev state', prevState.posts)
-        console.log('post current state', this.state) 
+        // console.log('post prev props', prevProps.posts)
+        // console.log('post prev state', prevState.posts)
+        // console.log('post current state', this.state) 
     }
 
     // update state to rerender component to update UI. pass in onRemovePhoto as prop
@@ -85,12 +85,12 @@ class Main extends Component {
                     <Photowall {...this.props} />
                 </div>
             )}/>
-            {/* <Route path= "/AddPhoto" render ={({history}) => (
+            <Route path= "/AddPhoto" render ={({history}) => (
                 <AddPhoto onAddPhoto = {(addedPost) => {
-                    this.addPhoto(addedPost) // updates state
+                    // this.addPhoto(addedPost) // updates state
                     history.push('/')
                 }}/>
-            )}/>  */}
+            )}/> 
         </div>
         )
     }
