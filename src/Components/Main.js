@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Title from './Title';
 import Photowall from './PhotoWall';
 import AddPhoto from './AddPhoto';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 import { createBrowserHistory } from 'history'
 import Photo from './Photo';
@@ -76,10 +76,14 @@ class Main extends Component {
 
         // two options for singel and multiple components rendering
         return (
-        <div> 
+         <div> 
+            {/* Link is from the react router */}
+            <h1>
+                <Link to="/">Photowall</Link> 
+            </h1>
             <Route exact path = "/" render={() => (
                 <div>
-                    <Title title={'Photowall'}/>
+                    {/* <Title title={'Photowall'}/> */}
                     {/* <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} onNavigate={this.navigate}/> */}
                     {/* {...this.props} passes all props (posts and dispatches) from main into photowall */}
                     <Photowall {...this.props} />
