@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Main from './Main';
 import { bindActionCreators } from 'redux';
 import {removePost, addPost}from '../redux/actions';
+import * as actions from '../redux/actions';
 import { withRouter } from 'react-router';
 
 // take state in store and map it to props. 
@@ -16,7 +17,7 @@ function mapStateToProps(state) {
 
 // shorthand for component
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({removePost}, dispatch) // { } makes sure it is a property of an object
+    return bindActionCreators(actions, dispatch) // { } makes sure it is a property of an object
 }
 
 // returns a function that returns a component in which we are going to inject our state. It returns a new connected component: App. A connected component is connected to a redux store and we render the connected component
