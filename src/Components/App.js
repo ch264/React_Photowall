@@ -4,7 +4,7 @@
 import { connect } from 'react-redux';
 import Main from './Main';
 import { bindActionCreators } from 'redux';
-import { removePost } from '../redux/actions';
+import {removePost, addPost}from '../redux/actions';
 import { withRouter } from 'react-router';
 
 // take state in store and map it to props. 

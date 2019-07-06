@@ -25,7 +25,9 @@ class AddPhoto extends Component {
         // if this is true, if user added in a value, add post to post array
         if (description && imageLink) {
             // access prop as soon as submit form. 
-            this.props.onAddPhoto(post) // passed in post is the post we created above
+            // this.props.onAddPhoto(post) // passed in post is the post we created above
+
+            this.props.addPost(post) // dispatch action on submit form, action goes to reducer and is added to case to switch statement
         }
     }
  
