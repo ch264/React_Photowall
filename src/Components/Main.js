@@ -90,7 +90,7 @@ class Main extends Component {
                 //     // this.addPhoto(addedPost) // updates state
                 //     history.push('/')
                 // }}/>
-                <AddPhoto {...this.props} />  
+                <AddPhoto {...this.props} onHistory={history}/>  // pass history as prop
             )}/> 
         </div>
         )

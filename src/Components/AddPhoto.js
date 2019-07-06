@@ -28,6 +28,7 @@ class AddPhoto extends Component {
             // this.props.onAddPhoto(post) // passed in post is the post we created above
 
             this.props.addPost(post) // dispatch action on submit form, action goes to reducer and is added to case to switch statement
+            this.props.onHistory.push('/')
         }
     }
  
