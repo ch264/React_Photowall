@@ -1,13 +1,14 @@
-import posts from '../data/posts'
+import _posts from '../data/posts'
 import { combineReducers } from 'redux';
 
 // functions
 
 // Current state always has to be returned by reducer, action that is dispatched
 // set state equal to initial value and posts populate state in store
-function posts(state = posts, action) {
+function posts(state = _posts, action) {
     // remove photo  action
-    console.log(action.index)
+    // console.log(action.index)
+    console.log('posts reducer')
 
     // when action 'REMOVE_POST' gets dispatched, we want to return a state, not modify a state (as opposed to setState)
     switch (action.type) {
@@ -25,6 +26,13 @@ function posts(state = posts, action) {
 //     return state
 // }
 function comments(state=[], action) {
+    console.log('comments reducer')
+    switch (action.type) {
+        case 'ADD_COMMENT' : // add comment to current state
+            return [...state, action.comment]
+        default: 
+            return state
+    }
     return state
 }
 

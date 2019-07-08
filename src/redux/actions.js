@@ -20,3 +20,10 @@ export function addPost(post) {
         // post
     }
 }
+
+export function addComment(comment) {
+    return {
+        type: 'ADD_Comment',
+        comment
+    }
+}

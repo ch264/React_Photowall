@@ -12,12 +12,14 @@ class Single extends Component {
         const id = Number(match.params.id);
         // gives us the post we want to display
         const post = posts.find((post) => post.id === id)
+        const comments = this.props.comments;
         console.log(post)
+
         return (
             <div className='single-photo'>
                 {/* components are reusable so pass in Photo */}
                 <Photo post={post}/>
-                <Comments />
+                <Comments addComment={this.props.addComment} comments={comments}/>
             </div>
         )
     }
