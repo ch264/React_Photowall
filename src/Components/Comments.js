@@ -12,7 +12,7 @@ class Comments extends Component {
         // console.log(e.target.elements.comment.value)
         const comment = e.target.elements.comment.value;
         // call the addComment method from the props that are passed dwn 
-        this.props.addComment(comment, this.props.id);
+        this.props.startAddingComment(comment, this.props.id);
         e.target.elements.comment.value = ''; // empty comment field once submitted
     }
 

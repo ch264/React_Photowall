@@ -25,6 +25,7 @@ export function startLoadingPosts() {
             })
             dispatch(loadPosts(posts)) // dispatching goes straight to reducer where it can be manipulated
         })
+        .catch((err) => { console.log(err) })
     }
 }
 
@@ -57,6 +58,7 @@ export function startRemovingPost(index, id) {
         .then(() => {
             dispatch(removePost(index))
         })
+        .catch((err) => { console.log(err) })
     }
 }
 
@@ -74,5 +76,17 @@ export function addComment(comment, postId) {
         type: 'ADD_COMMENT',
         comment,
         postId
+    }
+}
+
+export function startAddingComment(comment, postId) {
+    return (dispatch) => {
+        return database
+        .ref(`comments/${postId}`)
+        .push(comment)
+        .then(() => {
+            dispatch(addComment(comment, postId))
+        })
+        .catch((err) => { console.log(err) })
     }
 }
