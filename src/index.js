@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './redux/reducer';
 import { Provider } from 'react-redux';
-import App from './Components/App'
+import App from './Components/App';
+import thunk from 'redux-thunk';
+import {database} from './database/config'
+
 
 // import Main from './Components/Main'
 import './styles/stylesheet.css'
 
 // our store that has a reducer
-const store = createStore(rootReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) // add for redux chrome stor from https://github.com/zalmoxisus/redux-devtools-extension
+const store = createStore(rootReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(), applyMiddleware(thunk)) // add for redux chrome stor from https://github.com/zalmoxisus/redux-devtools-extension
 // now all dispatched actions show up in dev tools
 
 
