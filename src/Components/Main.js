@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import Title from './Title';
+// import Title from './Title';
+import Single from './single';
 import Photowall from './PhotoWall';
 import AddPhoto from './AddPhoto';
 import { Route, Link } from 'react-router-dom';
@@ -96,6 +97,9 @@ class Main extends Component {
                 // }}/>
                 <AddPhoto {...this.props} onHistory={history}/>  // pass history as prop
             )}/> 
+            <Route path='/single' render={() => (
+                <Single />
+            )}/>
         </div>
         )
     }

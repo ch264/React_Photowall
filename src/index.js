@@ -11,7 +11,8 @@ import App from './Components/App'
 import './styles/stylesheet.css'
 
 // our store that has a reducer
-const store = createStore(rootReducer)
+const store = createStore(rootReducer,  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) // add for redux chrome stor from https://github.com/zalmoxisus/redux-devtools-extension
+// now all dispatched actions show up in dev tools
 
 
 
