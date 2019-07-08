@@ -7,7 +7,7 @@ function Photo(props) {
     // add curly braces to add javascript dot notation
     return <figure className="figure">
         {/* pass in post id as a parameter */}
-        <Link to={`single/${post.id}`}> 
+        <Link to={`/single/${post.id}`}> 
             <img className="photo" src={post.imageLink} alt={post.description} />
         </Link>
         <figcaption><p>{post.description}</p></figcaption> 
@@ -20,7 +20,7 @@ function Photo(props) {
             }} >Remove</button>
 
             {/* counts the number of comments on a picture */}
-            <Link className="button" to={`single/${post.id}`}>
+            <Link className="button" to={`/single/${post.id}`}>
                 <div className="comment-count">
                     <div className="speech-bubble"></div>
                     {/* if the comment has a value  */}

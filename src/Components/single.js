@@ -12,7 +12,7 @@ class Single extends Component {
         const id = Number(match.params.id);
         // gives us the post we want to display
         const post = posts.find((post) => post.id === id)
-        const comments = this.props.comments[id] || [];
+        const comments = this.props.comments[match.params.id] || [];
         const index = this.props.posts.findIndex((post) => post.id === id)
         // console.log(post)
 

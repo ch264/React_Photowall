@@ -7,23 +7,22 @@ class Comments extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        // console.log(event.target.elements.comment.value)
-        const comment = event.target.elements.comment.value;
+    handleSubmit(e) {
+        e.preventDefault();
+        // console.log(e.target.elements.comment.value)
+        const comment = e.target.elements.comment.value;
         // call the addComment method from the props that are passed dwn 
         this.props.addComment(comment, this.props.id);
-        event.target.elements.comment.value = ''; // empty comment field once submitted
+        e.target.elements.comment.value = ''; // empty comment field once submitted
     }
 
     render() {
-        console.log(this.props.comments)
+        // console.log(this.props.comments)
         return (
             <div className="comment">
                 {
                     this.props.comments.map((comment, index) => {
                     return (
-
                         <p key={index}> { comment }</p>
                         )
                     })
