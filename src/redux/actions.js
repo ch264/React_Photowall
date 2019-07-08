@@ -1,5 +1,6 @@
 import {database} from '../database/config'
 
+// performs asynchronous calls to fetch and update data in database with Redux
 export function startAddingPost(post) {
     return (dispatch) => {
         // update database
@@ -45,6 +46,17 @@ export function removePost(index) {
         type: 'REMOVE_POST',
         index: index // index of post
         // index
+    }
+}
+
+export function startRemovingPost(index, id) {
+    return (dispatch) => {
+        return database
+        .ref(`posts/${id}`)
+        .remove()
+        .then(() => {
+            dispatch(removePost(index))
+        })
     }
 }
 

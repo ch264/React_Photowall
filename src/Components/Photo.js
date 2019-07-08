@@ -15,7 +15,7 @@ function Photo(props) {
             {/* call the method onRemovePhoto that was passed down as a prop */}
             <button className="remove-button" onClick = {() => {
                 // props.onRemovePhoto(post) // pass in post, which is postRemoved argument
-                props.removePost(props.index);
+                props.startRemovingPost(props.index, post.id);
                 props.history.push('/')
             }} >Remove</button>
 
