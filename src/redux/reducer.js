@@ -16,6 +16,8 @@ function posts(state = _posts, action) {
             return [...state.slice(0, action.index), ...state.slice(action.index + 1)] // this represents all the elements in state before click on specified index, then returns the state without modifying it, slicing of from index 0 to the specified index
         case 'ADD_POST':
             return [...state, action.post]
+        case 'LOAD_POSTS':
+            return action.posts // return payload that is passed into it by dispatch method
         default: 
             return state
     }

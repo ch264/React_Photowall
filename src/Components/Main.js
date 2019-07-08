@@ -61,6 +61,7 @@ class Main extends Component {
     componentDidMount() {
         // console.log('componentDidMount')
         // this.props.removePost(1); // pass in payload of 1 (index)
+        this.props.startLoadingPosts()
     }
 
     componentDidUpdate(prevProps, prevState) {

@@ -12,7 +12,28 @@ export function startAddingPost(post) {
     }
 }
 
+// grabs all posts from database
+export function startLoadingPosts() {
+    return (dispatch) => {
+        return database.ref('posts') // access the reference posts node
+        .once('value') // (.on() listen for changes in database to invoke function in realtime (.once() for invoking)
+        .then((snapshot) => { //snapshot contains all children in node in firebase
+            let posts = [];
+            snapshot.forEach((childSnapshot) => {
+                posts.push(childSnapshot.val())
+            })
+            dispatch(loadPosts(posts)) // dispatching goes straight to reducer where it can be manipulated
+        })
+    }
+}
 
+// loads posts to render in UI
+export function loadPosts(posts) {
+    return {
+        type:'LOAD_POSTS',
+        posts
+    }
+}
 
 // tells index in post array, which post to remove
 // reducer has to know the type of the action
