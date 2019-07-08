@@ -21,7 +21,7 @@ class Single extends Component {
                     ....loading
                 </div>
             )
-        } else {
+        } else if (post) {
             return (
                 <div className='single-photo'>
                     {/* components are reusable so pass in Photo */}
@@ -29,6 +29,8 @@ class Single extends Component {
                     <Comments startAddingComment={this.props.startAddingComment} comments={comments} id={id}/>
                 </div>
             )
+        } else {
+            return <h1>...no post found</h1>
         }
         
     }
