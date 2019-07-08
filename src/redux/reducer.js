@@ -19,7 +19,7 @@ function posts(state = _posts, action) {
         default: 
             return state
     }
-    return state;
+    // return state;
 }
 
 // const commentReducer = function comments(state=[], action) {
@@ -33,7 +33,7 @@ function comments(state=[], action) {
         default: 
             return state
     }
-    return state
+    // return state
 }
 
 // combine reducers into one reducer and pass that into the store.

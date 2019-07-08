@@ -4,7 +4,7 @@
 import { connect } from 'react-redux';
 import Main from './Main';
 import { bindActionCreators } from 'redux';
-import {removePost, addPost}from '../redux/actions';
+// import {removePost, addPost } from '../redux/actions';
 import * as actions from '../redux/actions';
 import { withRouter } from 'react-router';
 

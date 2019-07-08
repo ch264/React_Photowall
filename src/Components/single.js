@@ -19,7 +19,7 @@ class Single extends Component {
             <div className='single-photo'>
                 {/* components are reusable so pass in Photo */}
                 <Photo post={post}/>
-                <Comments addComment={this.props.addComment} comments={comments}/>
+                <Comments addComment={this.props.addComment} comments={comments} id={id}/>
             </div>
         )
     }

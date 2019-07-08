@@ -9,6 +9,7 @@ class Comments extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log(event.target.elements.comment.value)
         const comment = event.target.elements.comment.value;
         // call the addComment method from the props that are passed dwn 
         this.props.addComment(comment);
@@ -20,7 +21,7 @@ class Comments extends Component {
                 {
                     this.props.comments.map((comment, index) => {
                     return (
-                        <p>{ comment }</p>
+                        <p key={index}> { comment }</p>
                         )
                     })
                 }

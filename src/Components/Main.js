@@ -6,9 +6,9 @@ import AddPhoto from './AddPhoto';
 import { Route, Link } from 'react-router-dom';
 
 // import { createBrowserHistory } from 'history'
-import Photo from './Photo';
+// import Photo from './Photo';
 
-import { removePost } from '../redux/actions'
+// import { removePost } from '../redux/actions'
 
 // pass in this dummy data into the Photowall instance
 
@@ -16,8 +16,8 @@ import { removePost } from '../redux/actions'
 class Main extends Component {
     // only used to initalise state of components or bind methods to the proper context
     // state represents immutable data and affects what is rendered on the page. state is managed internally by the component itself
-    constructor() { 
-        super() // call to use keyword 'this'
+    // constructor() { 
+    //     super() // call to use keyword 'this'
         // this.state = { // points to 'main' instance that we declared
         //     posts: [{
         //         id: 0,
@@ -38,7 +38,7 @@ class Main extends Component {
         // }  
         // this.removePhoto = this.removePhoto.bind(this); // this is bound to our method and the conext is correct and this does not point to a function
         // console.log('constructor')
-    }
+    // }
 
     // // method removes photo, pass into photo component, change state und update UI
     // removePhoto(postRemoved) { // access method in each photo component
