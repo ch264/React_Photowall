@@ -90,3 +90,29 @@ export function startAddingComment(comment, postId) {
         .catch((err) => { console.log(err) })
     }
 }
+
+// on componentdidmount we call this function and load comments into object with key 
+export function startLoadingComments() {
+    return (dispatch) => {
+        return database
+        .ref('comments')
+        .once('value')
+        .then((snapshot) => { 
+            let comments = {}; // dump values as object 
+            snapshot.forEach((childSnapshot) => {
+                // each key represents post.id that has a set of comments
+                comments[childSnapshot.key] = Object.values(childSnapshot.val()); 
+            })
+            dispatch(loadComments(comments))
+        })
+        .catch((err) => { console.log(err) })
+    }
+}
+
+// once we have all data in object we dispatch an action that populates our store with that data inside the reducer, rerendering our UI
+export function loadComments(comments) {
+    return {
+        type: 'LOAD_COMMENTS',
+        comments
+    }
+}
