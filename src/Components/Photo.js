@@ -6,7 +6,7 @@ function Photo(props) {
     const post = props.post
     // add curly braces to add javascript dot notation
     return <figure className="figure">
-        <Link to={'single'}> 
+        <Link to={`single/${post.id}`}> 
             <img className="photo" src={post.imageLink} alt={post.description} />
         </Link>
         <figcaption><p>{post.description}</p></figcaption> 

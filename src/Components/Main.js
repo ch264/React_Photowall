@@ -97,7 +97,8 @@ class Main extends Component {
                 // }}/>
                 <AddPhoto {...this.props} onHistory={history}/>  // pass history as prop
             )}/> 
-            <Route path='/single' render={() => (
+            {/* anything written after / acts as a paramter (:id) */}
+            <Route path='/single/:id' render={() => (
                 <Single />
             )}/>
         </div>
