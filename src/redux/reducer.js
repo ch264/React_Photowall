@@ -25,11 +25,16 @@ function posts(state = _posts, action) {
 // const commentReducer = function comments(state=[], action) {
 //     return state
 // }
-function comments(state=[], action) {
-    console.log('comments reducer')
+function comments(state={}, action) {
+    // console.log('comments reducer')
     switch (action.type) {
         case 'ADD_COMMENT' : // add comment to current state
-            return [...state, action.comment]
+            if (!state[action.postId]){ // if there is no value
+                return {...state, [action.postId]: [action.comment]} // specify id as property of an object using []. action.postId is not an array. action.comment is an array! 
+            } else {
+                return {...state, [action.postId]: [...state[action.postId], action.comment]} // add comments to current array
+            }
+            
         default: 
             return state
     }

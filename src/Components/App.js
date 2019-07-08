@@ -14,7 +14,7 @@ function mapStateToProps(state) {
     // posts and comment have its own state that has a reducer to update state whenever action occurs
     return {
         posts: state.posts,
-        comments: state.comments
+        comments: state.comments // this is now an object with Ids
     }
 }
 

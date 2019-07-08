@@ -12,18 +12,18 @@ class Comments extends Component {
         console.log(event.target.elements.comment.value)
         const comment = event.target.elements.comment.value;
         // call the addComment method from the props that are passed dwn 
-        this.props.addComment(comment);
+        this.props.addComment(comment, this.props.id);
     }
 
     render() {
         return (
             <div className='comment'>
                 {
-                    this.props.comments.map((comment, index) => {
-                    return (
-                        <p key={index}> { comment }</p>
-                        )
-                    })
+                    // this.props.comments.map((comment, index) => {
+                    // return (
+                    //     <p key={index}> { comment }</p>
+                    //     )
+                    // })
                 }
                 <form className='comment-form' onSubmit={this.handleSubmit}>
                     <input type='text' placeholder='comment' name="comment"/>
