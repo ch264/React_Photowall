@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 function posts(state = _posts, action) {
     // remove photo  action
     // console.log(action.index)
-    console.log('posts reducer')
+    // console.log('posts reducer')
 
     // when action 'REMOVE_POST' gets dispatched, we want to return a state, not modify a state (as opposed to setState)
     switch (action.type) {

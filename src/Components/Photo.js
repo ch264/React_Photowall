@@ -16,6 +16,7 @@ function Photo(props) {
             <button className="remove-button" onClick = {() => {
                 // props.onRemovePhoto(post) // pass in post, which is postRemoved argument
                 props.removePost(props.index);
+                props.history.push('/')
             }} >Remove</button>
         </div>
     </figure>

@@ -58,7 +58,7 @@ class Main extends Component {
 
     // use to update state with data from database/API and call render method after 
     componentDidMount() {
-        console.log('componentDidMount')
+        // console.log('componentDidMount')
         // this.props.removePost(1); // pass in payload of 1 (index)
     }
 
