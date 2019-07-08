@@ -22,7 +22,15 @@ p {
     line-height: 1.5;
 }
 
- 
+ .loader {
+     height: 20%;
+     width: 100%;
+     display: flex;
+     position: fixed;
+     align-items: center;
+     justify-content: center;
+     font-size: 28pt;
+ }
 
 /* ///////////////////////////////////////////////////////// */
 /* ////////////////   Title       ///////////////////////////*/

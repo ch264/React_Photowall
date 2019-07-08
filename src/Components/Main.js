@@ -57,11 +57,17 @@ class Main extends Component {
     //     }))
     // }
 
+    state = { 
+        loading: true 
+    }
+
     // use to update state with data from database/API and call render method after 
     componentDidMount() {
         // console.log('componentDidMount')
         // this.props.removePost(1); // pass in payload of 1 (index)
-        this.props.startLoadingPosts();
+        this.props.startLoadingPosts().then(() => {
+            this.setState({loading: false}) // set state to false once done loading
+        });
         this.props.startLoadingComments();
     }
 
@@ -103,7 +109,7 @@ class Main extends Component {
             {/* anything written after / acts as a paramter (:id). pass in params as an entire object to render */}
             <Route path='/single/:id' render={(params) => (
                 // pass in all objects of params and props. params has to go after props because they both have a match object that overrites the other
-                <Single { ...this.props } {...params} />
+                <Single loading={this.state.loading} { ...this.props } {...params} />
             )}/>
         </div>
         )

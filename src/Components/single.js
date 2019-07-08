@@ -15,14 +15,22 @@ class Single extends Component {
         const comments = this.props.comments[match.params.id] || [];
         const index = this.props.posts.findIndex((post) => post.id === id)
         // console.log(post)
-
-        return (
-            <div className='single-photo'>
-                {/* components are reusable so pass in Photo */}
-                <Photo post={post} {...this.props} index={index}/>
-                <Comments startAddingComment={this.props.startAddingComment} comments={comments} id={id}/>
-            </div>
-        )
+        if (this.props.loading === true) {
+            return (
+                <div className="loader">
+                    ....loading
+                </div>
+            )
+        } else {
+            return (
+                <div className='single-photo'>
+                    {/* components are reusable so pass in Photo */}
+                    <Photo post={post} {...this.props} index={index}/>
+                    <Comments startAddingComment={this.props.startAddingComment} comments={comments} id={id}/>
+                </div>
+            )
+        }
+        
     }
 }
 
