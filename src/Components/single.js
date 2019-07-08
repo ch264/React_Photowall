@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Photo from './Photo';
+import Comments from './Comments'
 
 class Single extends Component {
     render() {
@@ -16,6 +17,7 @@ class Single extends Component {
             <div className='single-photo'>
                 {/* components are reusable so pass in Photo */}
                 <Photo post={post}/>
+                <Comments />
             </div>
         )
     }
