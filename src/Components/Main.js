@@ -5,7 +5,7 @@ import Photowall from './PhotoWall';
 import AddPhoto from './AddPhoto';
 import { Route, Link } from 'react-router-dom';
 
-import { createBrowserHistory } from 'history'
+// import { createBrowserHistory } from 'history'
 import Photo from './Photo';
 
 import { removePost } from '../redux/actions'
@@ -95,11 +95,12 @@ class Main extends Component {
                 //     // this.addPhoto(addedPost) // updates state
                 //     history.push('/')
                 // }}/>
-                <AddPhoto {...this.props} onHistory={history}/>  // pass history as prop
+                <AddPhoto {...this.props} onHistory={history}/>  // pass history as prop. history is a property of params (part of object)
             )}/> 
-            {/* anything written after / acts as a paramter (:id) */}
-            <Route path='/single/:id' render={() => (
-                <Single />
+            {/* anything written after / acts as a paramter (:id). pass in params as an entire object to render */}
+            <Route path='/single/:id' render={(params) => (
+                // pass in all objects of params and props. params has to go after props because they both have a match object that overrites the other
+                <Single { ...this.props } {...params} />
             )}/>
         </div>
         )
