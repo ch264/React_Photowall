@@ -1,11 +1,11 @@
 import posts from '../data/posts'
-
+import { combineReducers } from 'redux';
 
 // functions
 
 // Current state always has to be returned by reducer, action that is dispatched
 // set state equal to initial value and posts populate state in store
-const postReducer = function posts(state = posts, action) {
+function posts(state = posts, action) {
     // remove photo  action
     console.log(action.index)
 
@@ -21,4 +21,14 @@ const postReducer = function posts(state = posts, action) {
     return state;
 }
 
-export default postReducer
+// const commentReducer = function comments(state=[], action) {
+//     return state
+// }
+function comments(state=[], action) {
+    return state
+}
+
+// combine reducers into one reducer and pass that into the store.
+const rootReducer = combineReducers({ posts, comments })
+
+export default rootReducer

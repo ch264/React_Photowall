@@ -10,10 +10,16 @@ import { withRouter } from 'react-router';
 
 // take state in store and map it to props. 
 function mapStateToProps(state) {
+    // every reducer updates one piece of state
+    // posts has its own state that has a reducer to update state whenever action occurs
     return {
-        posts: state
+        posts: state.posts,
+        comments: state.comments
     }
 }
+
+
+
 
 // shorthand for component
 function mapDispatchToProps(dispatch) {
